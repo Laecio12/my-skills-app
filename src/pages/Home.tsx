@@ -17,8 +17,10 @@ export function Home() {
       id: String(new Date().getTime()),
       name: newSkill,
     }
-    setMySkills([...mySkills, data]);
-    setNewSkill('');
+    if(newSkill.length > 0) {
+      setMySkills([...mySkills, data]);
+      setNewSkill('');
+    }
   }
 
   function handleRemoveSkill(id: string) {
